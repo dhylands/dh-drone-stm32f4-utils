@@ -64,7 +64,7 @@ pub struct SystemClockRegs<'a, THR: ThrNvic + ThrFiberFuture> {
     sysclk: &'a dyn SystemClock,
 }
 
-impl <'a, THR: ThrNvic + ThrFiberFuture> SystemClockRegs<'a, THR> {
+impl<'a, THR: ThrNvic + ThrFiberFuture> SystemClockRegs<'a, THR> {
     pub fn init(
         flash_acr: reg::flash::Acr<Srt>,
         pwr_cr: reg::pwr::Cr<Srt>,
@@ -90,21 +90,19 @@ impl <'a, THR: ThrNvic + ThrFiberFuture> SystemClockRegs<'a, THR> {
     }
 
     /// Returns the current frequency of the system clock.
-    pub fn clock(&self) -> u32
-    {
-        ((self.sysclk.hse_freq() / self.rcc_pllcfgr.pllm.read_bits()) * self.rcc_pllcfgr.plln.read_bits())
+    pub fn clock(&self) -> u32 {
+        ((self.sysclk.hse_freq() / self.rcc_pllcfgr.pllm.read_bits())
+            * self.rcc_pllcfgr.plln.read_bits())
             / ((self.rcc_pllcfgr.pllp.read_bits() + 1) * 2)
     }
 
     /// Returns the current frequency of the SysTick clock.
-    pub fn systick_frequency(&self) -> u32
-    {
+    pub fn systick_frequency(&self) -> u32 {
         self.clock() / 8
     }
 
     /// Sets the system clock frequency based on the constants.
-    pub async fn raise_system_frequency(&self)
-    {
+    pub async fn raise_system_frequency(&self) {
         // Enable Power Control Clock.
         self.rcc_apb1enr.pwren.set_bit();
 
