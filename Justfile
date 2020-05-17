@@ -34,6 +34,14 @@ doc:
 doc-open: doc
 	drone env {{target}} -- cargo doc --features "{{features}}" --open
 
+# Publish the crate on crates.io
+publish:
+	drone env {{target}} -- cargo publish
+
+# Publish the crate on crates.io
+publish-dry:
+	drone env {{target}} -- cargo publish --dry-run
+
 # Run the tests
 test:
 	drone env -- cargo test --features "std {{features}}"

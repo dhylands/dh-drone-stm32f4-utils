@@ -1,7 +1,26 @@
 [package]
-name = "drone-stm32f4-utils"
+name = "dh-drone-stm32f4-utils"
 version = "0.1.0"
 authors = ["Dave Hylands <davehylands@fullstory.com>"]
+license = "MIT"
+keywords = [
+    "stm32",
+    "cortex",
+    "arm",
+    "rtos",
+    "bare-metal",
+]
+categories = [
+    "embedded",
+    "asynchronous",
+    "concurrency",
+    "no-std",
+    "hardware-support",
+]
+description = "STM32F4xx utility functions for Drone OS."
+homepage = "https://github.com/dhylands/dh-drone-stm32f4-utils"
+documentation = "https://github.com/dhylands/dh-drone-stm32f4-utils"
+repository = "https://github.com/dhylands/dh-drone-stm32f4-utils"
 edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
