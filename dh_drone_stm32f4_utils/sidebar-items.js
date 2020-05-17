@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["clock","Functions for configuring the various clocks used on the STM32F4xx."],["consts","Register constants used by this crate."],["gpiosignal","Some concrete implementations of the Signal trait for GPIO pins."],["signal","A trait for controlling a signal (i.e. a gpio output like a relay or LED)."]]});

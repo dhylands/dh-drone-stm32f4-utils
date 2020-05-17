@@ -1,0 +1,1673 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="API documentation for the Rust `stm32_reg_tokens` macro in crate `drone_stm32_map`."><meta name="keywords" content="rust, rustlang, rust-lang, stm32_reg_tokens"><title>drone_stm32_map::stm32_reg_tokens - Rust</title><link rel="stylesheet" type="text/css" href="../normalize.css"><link rel="stylesheet" type="text/css" href="../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../dark.css"><link rel="stylesheet" type="text/css" href="../light.css" id="themeStyle"><script src="../storage.js"></script><noscript><link rel="stylesheet" href="../noscript.css"></noscript><link rel="shortcut icon" href="../favicon.ico"><style type="text/css">#crate-search{background-image:url("../down-arrow.svg");}</style></head><body class="rustdoc macro"><!--[if lte IE 8]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu">&#9776;</div><a href='../drone_stm32_map/index.html'><div class='logo-container'><img src='../rust-logo.png' alt='logo'></div></a><div class="sidebar-elems"><p class='location'><a href='index.html'>drone_stm32_map</a></p><script>window.sidebarCurrent = {name: 'stm32_reg_tokens', ty: 'macro', relpath: ''};</script><script defer src="sidebar-items.js"></script></div></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!"><img src="../brush.svg" width="18" alt="Pick another theme!"></button><div id="theme-choices"></div></div><script src="../theme.js"></script><nav class="sub"><form class="search-form"><div class="search-container"><div><select id="crate-search"><option value="All crates">All crates</option></select><input class="search-input" name="search" disabled autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><a id="settings-menu" href="../settings.html"><img src="../wheel.svg" width="18" alt="Change settings"></a></div></form></nav><section id="main" class="content"><h1 class='fqn'><span class='out-of-band'><span id='render-detail'><a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">[<span class='inner'>&#x2212;</span>]</a></span><a class='srclink' href='../src/drone_stm32_map_pieces/home/travis/build/dhylands/dh-drone-stm32f4-utils/target/thumbv7em-none-eabihf/debug/build/drone-stm32-map-pieces-09dce3c7070aecb5/out/svd_reg_index.rs.html#1-834' title='goto source code'>[src]</a></span><span class='in-band'>Macro <a href='index.html'>drone_stm32_map</a>::<wbr><a class="macro" href=''>stm32_reg_tokens</a></span></h1><div class="docblock type-decl hidden-by-usual-hider"><div class="example-wrap"><pre class="rust macro">
+<span class="macro">macro_rules</span><span class="macro">!</span> <span class="ident">stm32_reg_tokens</span> {
+    <span class="ident">reg</span>::<span class="macro">tokens</span><span class="macro">!</span> {
+    <span class="doccomment">/// Defines an index of STM32F411 register tokens.</span>
+    <span class="kw">pub</span> <span class="kw">macro</span> <span class="ident">stm32_reg_tokens</span>;
+    <span class="kw">use</span> <span class="kw">macro</span> <span class="ident">drone_cortexm</span>::<span class="ident">map</span>::<span class="ident">cortexm_reg_tokens</span>;
+    <span class="kw">super</span>::<span class="ident">inner</span>;
+    <span class="kw">crate</span>::<span class="ident">reg</span>;
+    <span class="doccomment">/// ADC common registers</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">ADC_Common</span> {
+        <span class="ident">CSR</span>;
+        <span class="ident">CCR</span>;
+    }
+    <span class="doccomment">/// Analog-to-digital converter</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">ADC1</span> {
+        <span class="ident">SR</span>;
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">SMPR1</span>;
+        <span class="ident">SMPR2</span>;
+        <span class="ident">JOFR1</span>;
+        <span class="ident">JOFR2</span>;
+        <span class="ident">JOFR3</span>;
+        <span class="ident">JOFR4</span>;
+        <span class="ident">HTR</span>;
+        <span class="ident">LTR</span>;
+        <span class="ident">SQR1</span>;
+        <span class="ident">SQR2</span>;
+        <span class="ident">SQR3</span>;
+        <span class="ident">JSQR</span>;
+        <span class="ident">JDR1</span>;
+        <span class="ident">JDR2</span>;
+        <span class="ident">JDR3</span>;
+        <span class="ident">JDR4</span>;
+        <span class="ident">DR</span>;
+    }
+    <span class="doccomment">/// Cryptographic processor</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">CRC</span> {
+        <span class="ident">DR</span>;
+        <span class="ident">IDR</span>;
+        <span class="ident">CR</span>;
+    }
+    <span class="doccomment">/// Debug support</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">DBG</span> {
+        <span class="ident">DBGMCU_IDCODE</span>;
+        <span class="ident">DBGMCU_CR</span>;
+        <span class="ident">DBGMCU_APB1_FZ</span>;
+        <span class="ident">DBGMCU_APB2_FZ</span>;
+    }
+    <span class="doccomment">/// External interrupt/event</span>
+    <span class="doccomment">/// controller</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">EXTI</span> {
+        <span class="ident">IMR</span>;
+        <span class="ident">EMR</span>;
+        <span class="ident">RTSR</span>;
+        <span class="ident">FTSR</span>;
+        <span class="ident">SWIER</span>;
+        <span class="ident">PR</span>;
+    }
+    <span class="doccomment">/// FLASH</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">FLASH</span> {
+        <span class="ident">ACR</span>;
+        <span class="ident">KEYR</span>;
+        <span class="ident">OPTKEYR</span>;
+        <span class="ident">SR</span>;
+        <span class="ident">CR</span>;
+        <span class="ident">OPTCR</span>;
+    }
+    <span class="doccomment">/// Independent watchdog</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">IWDG</span> {
+        <span class="ident">KR</span>;
+        <span class="ident">PR</span>;
+        <span class="ident">RLR</span>;
+        <span class="ident">SR</span>;
+    }
+    <span class="doccomment">/// USB on the go full speed</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">OTG_FS_DEVICE</span> {
+        <span class="ident">FS_DCFG</span>;
+        <span class="ident">FS_DCTL</span>;
+        <span class="ident">FS_DSTS</span>;
+        <span class="ident">FS_DIEPMSK</span>;
+        <span class="ident">FS_DOEPMSK</span>;
+        <span class="ident">FS_DAINT</span>;
+        <span class="ident">FS_DAINTMSK</span>;
+        <span class="ident">DVBUSDIS</span>;
+        <span class="ident">DVBUSPULSE</span>;
+        <span class="ident">DIEPEMPMSK</span>;
+        <span class="ident">FS_DIEPCTL0</span>;
+        <span class="ident">DIEPCTL1</span>;
+        <span class="ident">DIEPCTL2</span>;
+        <span class="ident">DIEPCTL3</span>;
+        <span class="ident">DOEPCTL0</span>;
+        <span class="ident">DOEPCTL1</span>;
+        <span class="ident">DOEPCTL2</span>;
+        <span class="ident">DOEPCTL3</span>;
+        <span class="ident">DIEPINT0</span>;
+        <span class="ident">DIEPINT1</span>;
+        <span class="ident">DIEPINT2</span>;
+        <span class="ident">DIEPINT3</span>;
+        <span class="ident">DOEPINT0</span>;
+        <span class="ident">DOEPINT1</span>;
+        <span class="ident">DOEPINT2</span>;
+        <span class="ident">DOEPINT3</span>;
+        <span class="ident">DIEPTSIZ0</span>;
+        <span class="ident">DOEPTSIZ0</span>;
+        <span class="ident">DIEPTSIZ1</span>;
+        <span class="ident">DIEPTSIZ2</span>;
+        <span class="ident">DIEPTSIZ3</span>;
+        <span class="ident">DTXFSTS0</span>;
+        <span class="ident">DTXFSTS1</span>;
+        <span class="ident">DTXFSTS2</span>;
+        <span class="ident">DTXFSTS3</span>;
+        <span class="ident">DOEPTSIZ1</span>;
+        <span class="ident">DOEPTSIZ2</span>;
+        <span class="ident">DOEPTSIZ3</span>;
+    }
+    <span class="doccomment">/// USB on the go full speed</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">OTG_FS_GLOBAL</span> {
+        <span class="ident">FS_GOTGCTL</span>;
+        <span class="ident">FS_GOTGINT</span>;
+        <span class="ident">FS_GAHBCFG</span>;
+        <span class="ident">FS_GUSBCFG</span>;
+        <span class="ident">FS_GRSTCTL</span>;
+        <span class="ident">FS_GINTSTS</span>;
+        <span class="ident">FS_GINTMSK</span>;
+        <span class="ident">FS_GRXSTSR_Device</span>;
+        <span class="op">!</span><span class="ident">FS_GRXSTSR_Host</span>;
+        <span class="ident">FS_GRXFSIZ</span>;
+        <span class="ident">FS_GNPTXFSIZ_Device</span>;
+        <span class="op">!</span><span class="ident">FS_GNPTXFSIZ_Host</span>;
+        <span class="ident">FS_GNPTXSTS</span>;
+        <span class="ident">FS_GCCFG</span>;
+        <span class="ident">FS_CID</span>;
+        <span class="ident">FS_HPTXFSIZ</span>;
+        <span class="ident">FS_DIEPTXF1</span>;
+        <span class="ident">FS_DIEPTXF2</span>;
+        <span class="ident">FS_DIEPTXF3</span>;
+    }
+    <span class="doccomment">/// USB on the go full speed</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">OTG_FS_HOST</span> {
+        <span class="ident">FS_HCFG</span>;
+        <span class="ident">HFIR</span>;
+        <span class="ident">FS_HFNUM</span>;
+        <span class="ident">FS_HPTXSTS</span>;
+        <span class="ident">HAINT</span>;
+        <span class="ident">HAINTMSK</span>;
+        <span class="ident">FS_HPRT</span>;
+        <span class="ident">FS_HCCHAR0</span>;
+        <span class="ident">FS_HCCHAR1</span>;
+        <span class="ident">FS_HCCHAR2</span>;
+        <span class="ident">FS_HCCHAR3</span>;
+        <span class="ident">FS_HCCHAR4</span>;
+        <span class="ident">FS_HCCHAR5</span>;
+        <span class="ident">FS_HCCHAR6</span>;
+        <span class="ident">FS_HCCHAR7</span>;
+        <span class="ident">FS_HCINT0</span>;
+        <span class="ident">FS_HCINT1</span>;
+        <span class="ident">FS_HCINT2</span>;
+        <span class="ident">FS_HCINT3</span>;
+        <span class="ident">FS_HCINT4</span>;
+        <span class="ident">FS_HCINT5</span>;
+        <span class="ident">FS_HCINT6</span>;
+        <span class="ident">FS_HCINT7</span>;
+        <span class="ident">FS_HCINTMSK0</span>;
+        <span class="ident">FS_HCINTMSK1</span>;
+        <span class="ident">FS_HCINTMSK2</span>;
+        <span class="ident">FS_HCINTMSK3</span>;
+        <span class="ident">FS_HCINTMSK4</span>;
+        <span class="ident">FS_HCINTMSK5</span>;
+        <span class="ident">FS_HCINTMSK6</span>;
+        <span class="ident">FS_HCINTMSK7</span>;
+        <span class="ident">FS_HCTSIZ0</span>;
+        <span class="ident">FS_HCTSIZ1</span>;
+        <span class="ident">FS_HCTSIZ2</span>;
+        <span class="ident">FS_HCTSIZ3</span>;
+        <span class="ident">FS_HCTSIZ4</span>;
+        <span class="ident">FS_HCTSIZ5</span>;
+        <span class="ident">FS_HCTSIZ6</span>;
+        <span class="ident">FS_HCTSIZ7</span>;
+    }
+    <span class="doccomment">/// USB on the go full speed</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">OTG_FS_PWRCLK</span> {
+        <span class="ident">FS_PCGCCTL</span>;
+    }
+    <span class="doccomment">/// Power control</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">PWR</span> {
+        <span class="ident">CR</span>;
+        <span class="ident">CSR</span>;
+    }
+    <span class="doccomment">/// Reset and clock control</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">RCC</span> {
+        <span class="ident">CR</span>;
+        <span class="ident">PLLCFGR</span>;
+        <span class="ident">CFGR</span>;
+        <span class="ident">CIR</span>;
+        <span class="ident">AHB1RSTR</span>;
+        <span class="ident">AHB2RSTR</span>;
+        <span class="ident">APB1RSTR</span>;
+        <span class="ident">APB2RSTR</span>;
+        <span class="ident">AHB1ENR</span>;
+        <span class="ident">AHB2ENR</span>;
+        <span class="ident">APB1ENR</span>;
+        <span class="ident">APB2ENR</span>;
+        <span class="ident">AHB1LPENR</span>;
+        <span class="ident">AHB2LPENR</span>;
+        <span class="ident">APB1LPENR</span>;
+        <span class="ident">APB2LPENR</span>;
+        <span class="ident">BDCR</span>;
+        <span class="ident">CSR</span>;
+        <span class="ident">SSCGR</span>;
+        <span class="ident">PLLI2SCFGR</span>;
+    }
+    <span class="doccomment">/// Real-time clock</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">RTC</span> {
+        <span class="ident">TR</span>;
+        <span class="ident">DR</span>;
+        <span class="ident">CR</span>;
+        <span class="ident">ISR</span>;
+        <span class="ident">PRER</span>;
+        <span class="ident">WUTR</span>;
+        <span class="ident">CALIBR</span>;
+        <span class="ident">ALRMAR</span>;
+        <span class="ident">ALRMBR</span>;
+        <span class="ident">WPR</span>;
+        <span class="ident">SSR</span>;
+        <span class="ident">SHIFTR</span>;
+        <span class="ident">TSTR</span>;
+        <span class="ident">TSDR</span>;
+        <span class="ident">TSSSR</span>;
+        <span class="ident">CALR</span>;
+        <span class="ident">TAFCR</span>;
+        <span class="ident">ALRMASSR</span>;
+        <span class="ident">ALRMBSSR</span>;
+        <span class="ident">BKP0R</span>;
+        <span class="ident">BKP1R</span>;
+        <span class="ident">BKP2R</span>;
+        <span class="ident">BKP3R</span>;
+        <span class="ident">BKP4R</span>;
+        <span class="ident">BKP5R</span>;
+        <span class="ident">BKP6R</span>;
+        <span class="ident">BKP7R</span>;
+        <span class="ident">BKP8R</span>;
+        <span class="ident">BKP9R</span>;
+        <span class="ident">BKP10R</span>;
+        <span class="ident">BKP11R</span>;
+        <span class="ident">BKP12R</span>;
+        <span class="ident">BKP13R</span>;
+        <span class="ident">BKP14R</span>;
+        <span class="ident">BKP15R</span>;
+        <span class="ident">BKP16R</span>;
+        <span class="ident">BKP17R</span>;
+        <span class="ident">BKP18R</span>;
+        <span class="ident">BKP19R</span>;
+    }
+    <span class="doccomment">/// Secure digital input/output</span>
+    <span class="doccomment">/// interface</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">SDIO</span> {
+        <span class="ident">POWER</span>;
+        <span class="ident">CLKCR</span>;
+        <span class="ident">ARG</span>;
+        <span class="ident">CMD</span>;
+        <span class="ident">RESPCMD</span>;
+        <span class="ident">RESP1</span>;
+        <span class="ident">RESP2</span>;
+        <span class="ident">RESP3</span>;
+        <span class="ident">RESP4</span>;
+        <span class="ident">DTIMER</span>;
+        <span class="ident">DLEN</span>;
+        <span class="ident">DCTRL</span>;
+        <span class="ident">DCOUNT</span>;
+        <span class="ident">STA</span>;
+        <span class="ident">ICR</span>;
+        <span class="ident">MASK</span>;
+        <span class="ident">FIFOCNT</span>;
+        <span class="ident">FIFO</span>;
+    }
+    <span class="doccomment">/// System configuration controller</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">SYSCFG</span> {
+        <span class="ident">MEMRM</span>;
+        <span class="ident">PMC</span>;
+        <span class="ident">EXTICR1</span>;
+        <span class="ident">EXTICR2</span>;
+        <span class="ident">EXTICR3</span>;
+        <span class="ident">EXTICR4</span>;
+        <span class="ident">CMPCR</span>;
+    }
+    <span class="doccomment">/// Advanced-timers</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">TIM1</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">SMCR</span>;
+        <span class="ident">DIER</span>;
+        <span class="ident">SR</span>;
+        <span class="ident">EGR</span>;
+        <span class="ident">CCMR1_Output</span>;
+        <span class="op">!</span><span class="ident">CCMR1_Input</span>;
+        <span class="ident">CCMR2_Output</span>;
+        <span class="op">!</span><span class="ident">CCMR2_Input</span>;
+        <span class="ident">CCER</span>;
+        <span class="ident">CNT</span>;
+        <span class="ident">PSC</span>;
+        <span class="ident">ARR</span>;
+        <span class="ident">CCR1</span>;
+        <span class="ident">CCR2</span>;
+        <span class="ident">CCR3</span>;
+        <span class="ident">CCR4</span>;
+        <span class="ident">DCR</span>;
+        <span class="ident">DMAR</span>;
+        <span class="ident">RCR</span>;
+        <span class="ident">BDTR</span>;
+    }
+    <span class="doccomment">/// Advanced-timers</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">TIM8</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">SMCR</span>;
+        <span class="ident">DIER</span>;
+        <span class="ident">SR</span>;
+        <span class="ident">EGR</span>;
+        <span class="ident">CCMR1_Output</span>;
+        <span class="op">!</span><span class="ident">CCMR1_Input</span>;
+        <span class="ident">CCMR2_Output</span>;
+        <span class="op">!</span><span class="ident">CCMR2_Input</span>;
+        <span class="ident">CCER</span>;
+        <span class="ident">CNT</span>;
+        <span class="ident">PSC</span>;
+        <span class="ident">ARR</span>;
+        <span class="ident">CCR1</span>;
+        <span class="ident">CCR2</span>;
+        <span class="ident">CCR3</span>;
+        <span class="ident">CCR4</span>;
+        <span class="ident">DCR</span>;
+        <span class="ident">DMAR</span>;
+        <span class="ident">RCR</span>;
+        <span class="ident">BDTR</span>;
+    }
+    <span class="doccomment">/// General-purpose-timers</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">TIM10</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">DIER</span>;
+        <span class="ident">SR</span>;
+        <span class="ident">EGR</span>;
+        <span class="ident">CCMR1_Output</span>;
+        <span class="op">!</span><span class="ident">CCMR1_Input</span>;
+        <span class="ident">CCER</span>;
+        <span class="ident">CNT</span>;
+        <span class="ident">PSC</span>;
+        <span class="ident">ARR</span>;
+        <span class="ident">CCR1</span>;
+    }
+    <span class="doccomment">/// General-purpose-timers</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">TIM11</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">DIER</span>;
+        <span class="ident">SR</span>;
+        <span class="ident">EGR</span>;
+        <span class="ident">CCMR1_Output</span>;
+        <span class="op">!</span><span class="ident">CCMR1_Input</span>;
+        <span class="ident">CCER</span>;
+        <span class="ident">CNT</span>;
+        <span class="ident">PSC</span>;
+        <span class="ident">ARR</span>;
+        <span class="ident">CCR1</span>;
+        <span class="ident">OR</span>;
+    }
+    <span class="doccomment">/// General purpose timers</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">TIM2</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">SMCR</span>;
+        <span class="ident">DIER</span>;
+        <span class="ident">SR</span>;
+        <span class="ident">EGR</span>;
+        <span class="ident">CCMR1_Output</span>;
+        <span class="op">!</span><span class="ident">CCMR1_Input</span>;
+        <span class="ident">CCMR2_Output</span>;
+        <span class="op">!</span><span class="ident">CCMR2_Input</span>;
+        <span class="ident">CCER</span>;
+        <span class="ident">CNT</span>;
+        <span class="ident">PSC</span>;
+        <span class="ident">ARR</span>;
+        <span class="ident">CCR1</span>;
+        <span class="ident">CCR2</span>;
+        <span class="ident">CCR3</span>;
+        <span class="ident">CCR4</span>;
+        <span class="ident">DCR</span>;
+        <span class="ident">DMAR</span>;
+        <span class="ident">OR</span>;
+    }
+    <span class="doccomment">/// General purpose timers</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">TIM3</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">SMCR</span>;
+        <span class="ident">DIER</span>;
+        <span class="ident">SR</span>;
+        <span class="ident">EGR</span>;
+        <span class="ident">CCMR1_Output</span>;
+        <span class="op">!</span><span class="ident">CCMR1_Input</span>;
+        <span class="ident">CCMR2_Output</span>;
+        <span class="op">!</span><span class="ident">CCMR2_Input</span>;
+        <span class="ident">CCER</span>;
+        <span class="ident">CNT</span>;
+        <span class="ident">PSC</span>;
+        <span class="ident">ARR</span>;
+        <span class="ident">CCR1</span>;
+        <span class="ident">CCR2</span>;
+        <span class="ident">CCR3</span>;
+        <span class="ident">CCR4</span>;
+        <span class="ident">DCR</span>;
+        <span class="ident">DMAR</span>;
+    }
+    <span class="doccomment">/// General purpose timers</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">TIM4</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">SMCR</span>;
+        <span class="ident">DIER</span>;
+        <span class="ident">SR</span>;
+        <span class="ident">EGR</span>;
+        <span class="ident">CCMR1_Output</span>;
+        <span class="op">!</span><span class="ident">CCMR1_Input</span>;
+        <span class="ident">CCMR2_Output</span>;
+        <span class="op">!</span><span class="ident">CCMR2_Input</span>;
+        <span class="ident">CCER</span>;
+        <span class="ident">CNT</span>;
+        <span class="ident">PSC</span>;
+        <span class="ident">ARR</span>;
+        <span class="ident">CCR1</span>;
+        <span class="ident">CCR2</span>;
+        <span class="ident">CCR3</span>;
+        <span class="ident">CCR4</span>;
+        <span class="ident">DCR</span>;
+        <span class="ident">DMAR</span>;
+    }
+    <span class="doccomment">/// General-purpose-timers</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">TIM5</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">SMCR</span>;
+        <span class="ident">DIER</span>;
+        <span class="ident">SR</span>;
+        <span class="ident">EGR</span>;
+        <span class="ident">CCMR1_Output</span>;
+        <span class="op">!</span><span class="ident">CCMR1_Input</span>;
+        <span class="ident">CCMR2_Output</span>;
+        <span class="op">!</span><span class="ident">CCMR2_Input</span>;
+        <span class="ident">CCER</span>;
+        <span class="ident">CNT</span>;
+        <span class="ident">PSC</span>;
+        <span class="ident">ARR</span>;
+        <span class="ident">CCR1</span>;
+        <span class="ident">CCR2</span>;
+        <span class="ident">CCR3</span>;
+        <span class="ident">CCR4</span>;
+        <span class="ident">DCR</span>;
+        <span class="ident">DMAR</span>;
+        <span class="ident">OR</span>;
+    }
+    <span class="doccomment">/// General purpose timers</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">TIM9</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">SMCR</span>;
+        <span class="ident">DIER</span>;
+        <span class="ident">SR</span>;
+        <span class="ident">EGR</span>;
+        <span class="ident">CCMR1_Output</span>;
+        <span class="op">!</span><span class="ident">CCMR1_Input</span>;
+        <span class="ident">CCER</span>;
+        <span class="ident">CNT</span>;
+        <span class="ident">PSC</span>;
+        <span class="ident">ARR</span>;
+        <span class="ident">CCR1</span>;
+        <span class="ident">CCR2</span>;
+    }
+    <span class="doccomment">/// Universal synchronous asynchronous receiver</span>
+    <span class="doccomment">/// transmitter</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">USART1</span> {
+        <span class="ident">SR</span>;
+        <span class="ident">DR</span>;
+        <span class="ident">BRR</span>;
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">CR3</span>;
+        <span class="ident">GTPR</span>;
+    }
+    <span class="doccomment">/// Universal synchronous asynchronous receiver</span>
+    <span class="doccomment">/// transmitter</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">USART2</span> {
+        <span class="ident">SR</span>;
+        <span class="ident">DR</span>;
+        <span class="ident">BRR</span>;
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">CR3</span>;
+        <span class="ident">GTPR</span>;
+    }
+    <span class="doccomment">/// Universal synchronous asynchronous receiver</span>
+    <span class="doccomment">/// transmitter</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">USART6</span> {
+        <span class="ident">SR</span>;
+        <span class="ident">DR</span>;
+        <span class="ident">BRR</span>;
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">CR3</span>;
+        <span class="ident">GTPR</span>;
+    }
+    <span class="doccomment">/// Window watchdog</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">WWDG</span> {
+        <span class="ident">CR</span>;
+        <span class="ident">CFR</span>;
+        <span class="ident">SR</span>;
+    }
+    <span class="doccomment">/// DMA controller</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">DMA2</span> {
+        <span class="ident">LISR</span>;
+        <span class="ident">HISR</span>;
+        <span class="ident">LIFCR</span>;
+        <span class="ident">HIFCR</span>;
+        <span class="ident">S0CR</span>;
+        <span class="ident">S0NDTR</span>;
+        <span class="ident">S0PAR</span>;
+        <span class="ident">S0M0AR</span>;
+        <span class="ident">S0M1AR</span>;
+        <span class="ident">S0FCR</span>;
+        <span class="ident">S1CR</span>;
+        <span class="ident">S1NDTR</span>;
+        <span class="ident">S1PAR</span>;
+        <span class="ident">S1M0AR</span>;
+        <span class="ident">S1M1AR</span>;
+        <span class="ident">S1FCR</span>;
+        <span class="ident">S2CR</span>;
+        <span class="ident">S2NDTR</span>;
+        <span class="ident">S2PAR</span>;
+        <span class="ident">S2M0AR</span>;
+        <span class="ident">S2M1AR</span>;
+        <span class="ident">S2FCR</span>;
+        <span class="ident">S3CR</span>;
+        <span class="ident">S3NDTR</span>;
+        <span class="ident">S3PAR</span>;
+        <span class="ident">S3M0AR</span>;
+        <span class="ident">S3M1AR</span>;
+        <span class="ident">S3FCR</span>;
+        <span class="ident">S4CR</span>;
+        <span class="ident">S4NDTR</span>;
+        <span class="ident">S4PAR</span>;
+        <span class="ident">S4M0AR</span>;
+        <span class="ident">S4M1AR</span>;
+        <span class="ident">S4FCR</span>;
+        <span class="ident">S5CR</span>;
+        <span class="ident">S5NDTR</span>;
+        <span class="ident">S5PAR</span>;
+        <span class="ident">S5M0AR</span>;
+        <span class="ident">S5M1AR</span>;
+        <span class="ident">S5FCR</span>;
+        <span class="ident">S6CR</span>;
+        <span class="ident">S6NDTR</span>;
+        <span class="ident">S6PAR</span>;
+        <span class="ident">S6M0AR</span>;
+        <span class="ident">S6M1AR</span>;
+        <span class="ident">S6FCR</span>;
+        <span class="ident">S7CR</span>;
+        <span class="ident">S7NDTR</span>;
+        <span class="ident">S7PAR</span>;
+        <span class="ident">S7M0AR</span>;
+        <span class="ident">S7M1AR</span>;
+        <span class="ident">S7FCR</span>;
+    }
+    <span class="doccomment">/// DMA controller</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">DMA1</span> {
+        <span class="ident">LISR</span>;
+        <span class="ident">HISR</span>;
+        <span class="ident">LIFCR</span>;
+        <span class="ident">HIFCR</span>;
+        <span class="ident">S0CR</span>;
+        <span class="ident">S0NDTR</span>;
+        <span class="ident">S0PAR</span>;
+        <span class="ident">S0M0AR</span>;
+        <span class="ident">S0M1AR</span>;
+        <span class="ident">S0FCR</span>;
+        <span class="ident">S1CR</span>;
+        <span class="ident">S1NDTR</span>;
+        <span class="ident">S1PAR</span>;
+        <span class="ident">S1M0AR</span>;
+        <span class="ident">S1M1AR</span>;
+        <span class="ident">S1FCR</span>;
+        <span class="ident">S2CR</span>;
+        <span class="ident">S2NDTR</span>;
+        <span class="ident">S2PAR</span>;
+        <span class="ident">S2M0AR</span>;
+        <span class="ident">S2M1AR</span>;
+        <span class="ident">S2FCR</span>;
+        <span class="ident">S3CR</span>;
+        <span class="ident">S3NDTR</span>;
+        <span class="ident">S3PAR</span>;
+        <span class="ident">S3M0AR</span>;
+        <span class="ident">S3M1AR</span>;
+        <span class="ident">S3FCR</span>;
+        <span class="ident">S4CR</span>;
+        <span class="ident">S4NDTR</span>;
+        <span class="ident">S4PAR</span>;
+        <span class="ident">S4M0AR</span>;
+        <span class="ident">S4M1AR</span>;
+        <span class="ident">S4FCR</span>;
+        <span class="ident">S5CR</span>;
+        <span class="ident">S5NDTR</span>;
+        <span class="ident">S5PAR</span>;
+        <span class="ident">S5M0AR</span>;
+        <span class="ident">S5M1AR</span>;
+        <span class="ident">S5FCR</span>;
+        <span class="ident">S6CR</span>;
+        <span class="ident">S6NDTR</span>;
+        <span class="ident">S6PAR</span>;
+        <span class="ident">S6M0AR</span>;
+        <span class="ident">S6M1AR</span>;
+        <span class="ident">S6FCR</span>;
+        <span class="ident">S7CR</span>;
+        <span class="ident">S7NDTR</span>;
+        <span class="ident">S7PAR</span>;
+        <span class="ident">S7M0AR</span>;
+        <span class="ident">S7M1AR</span>;
+        <span class="ident">S7FCR</span>;
+    }
+    <span class="doccomment">/// General-purpose I/Os</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">GPIOH</span> {
+        <span class="ident">MODER</span>;
+        <span class="ident">OTYPER</span>;
+        <span class="ident">OSPEEDR</span>;
+        <span class="ident">PUPDR</span>;
+        <span class="ident">IDR</span>;
+        <span class="ident">ODR</span>;
+        <span class="ident">BSRR</span>;
+        <span class="ident">LCKR</span>;
+        <span class="ident">AFRL</span>;
+        <span class="ident">AFRH</span>;
+    }
+    <span class="doccomment">/// General-purpose I/Os</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">GPIOE</span> {
+        <span class="ident">MODER</span>;
+        <span class="ident">OTYPER</span>;
+        <span class="ident">OSPEEDR</span>;
+        <span class="ident">PUPDR</span>;
+        <span class="ident">IDR</span>;
+        <span class="ident">ODR</span>;
+        <span class="ident">BSRR</span>;
+        <span class="ident">LCKR</span>;
+        <span class="ident">AFRL</span>;
+        <span class="ident">AFRH</span>;
+    }
+    <span class="doccomment">/// General-purpose I/Os</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">GPIOD</span> {
+        <span class="ident">MODER</span>;
+        <span class="ident">OTYPER</span>;
+        <span class="ident">OSPEEDR</span>;
+        <span class="ident">PUPDR</span>;
+        <span class="ident">IDR</span>;
+        <span class="ident">ODR</span>;
+        <span class="ident">BSRR</span>;
+        <span class="ident">LCKR</span>;
+        <span class="ident">AFRL</span>;
+        <span class="ident">AFRH</span>;
+    }
+    <span class="doccomment">/// General-purpose I/Os</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">GPIOC</span> {
+        <span class="ident">MODER</span>;
+        <span class="ident">OTYPER</span>;
+        <span class="ident">OSPEEDR</span>;
+        <span class="ident">PUPDR</span>;
+        <span class="ident">IDR</span>;
+        <span class="ident">ODR</span>;
+        <span class="ident">BSRR</span>;
+        <span class="ident">LCKR</span>;
+        <span class="ident">AFRL</span>;
+        <span class="ident">AFRH</span>;
+    }
+    <span class="doccomment">/// General-purpose I/Os</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">GPIOB</span> {
+        <span class="ident">MODER</span>;
+        <span class="ident">OTYPER</span>;
+        <span class="ident">OSPEEDR</span>;
+        <span class="ident">PUPDR</span>;
+        <span class="ident">IDR</span>;
+        <span class="ident">ODR</span>;
+        <span class="ident">BSRR</span>;
+        <span class="ident">LCKR</span>;
+        <span class="ident">AFRL</span>;
+        <span class="ident">AFRH</span>;
+    }
+    <span class="doccomment">/// General-purpose I/Os</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">GPIOA</span> {
+        <span class="ident">MODER</span>;
+        <span class="ident">OTYPER</span>;
+        <span class="ident">OSPEEDR</span>;
+        <span class="ident">PUPDR</span>;
+        <span class="ident">IDR</span>;
+        <span class="ident">ODR</span>;
+        <span class="ident">BSRR</span>;
+        <span class="ident">LCKR</span>;
+        <span class="ident">AFRL</span>;
+        <span class="ident">AFRH</span>;
+    }
+    <span class="doccomment">/// Inter-integrated circuit</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">I2C3</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">OAR1</span>;
+        <span class="ident">OAR2</span>;
+        <span class="ident">DR</span>;
+        <span class="ident">SR1</span>;
+        <span class="ident">SR2</span>;
+        <span class="ident">CCR</span>;
+        <span class="ident">TRISE</span>;
+        <span class="ident">FLTR</span>;
+    }
+    <span class="doccomment">/// Inter-integrated circuit</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">I2C2</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">OAR1</span>;
+        <span class="ident">OAR2</span>;
+        <span class="ident">DR</span>;
+        <span class="ident">SR1</span>;
+        <span class="ident">SR2</span>;
+        <span class="ident">CCR</span>;
+        <span class="ident">TRISE</span>;
+        <span class="ident">FLTR</span>;
+    }
+    <span class="doccomment">/// Inter-integrated circuit</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">I2C1</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">OAR1</span>;
+        <span class="ident">OAR2</span>;
+        <span class="ident">DR</span>;
+        <span class="ident">SR1</span>;
+        <span class="ident">SR2</span>;
+        <span class="ident">CCR</span>;
+        <span class="ident">TRISE</span>;
+        <span class="ident">FLTR</span>;
+    }
+    <span class="doccomment">/// Serial peripheral interface</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">I2S2ext</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">SR</span>;
+        <span class="ident">DR</span>;
+        <span class="ident">CRCPR</span>;
+        <span class="ident">RXCRCR</span>;
+        <span class="ident">TXCRCR</span>;
+        <span class="ident">I2SCFGR</span>;
+        <span class="ident">I2SPR</span>;
+    }
+    <span class="doccomment">/// Serial peripheral interface</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">I2S3ext</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">SR</span>;
+        <span class="ident">DR</span>;
+        <span class="ident">CRCPR</span>;
+        <span class="ident">RXCRCR</span>;
+        <span class="ident">TXCRCR</span>;
+        <span class="ident">I2SCFGR</span>;
+        <span class="ident">I2SPR</span>;
+    }
+    <span class="doccomment">/// Serial peripheral interface</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">SPI1</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">SR</span>;
+        <span class="ident">DR</span>;
+        <span class="ident">CRCPR</span>;
+        <span class="ident">RXCRCR</span>;
+        <span class="ident">TXCRCR</span>;
+        <span class="ident">I2SCFGR</span>;
+        <span class="ident">I2SPR</span>;
+    }
+    <span class="doccomment">/// Serial peripheral interface</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">SPI2</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">SR</span>;
+        <span class="ident">DR</span>;
+        <span class="ident">CRCPR</span>;
+        <span class="ident">RXCRCR</span>;
+        <span class="ident">TXCRCR</span>;
+        <span class="ident">I2SCFGR</span>;
+        <span class="ident">I2SPR</span>;
+    }
+    <span class="doccomment">/// Serial peripheral interface</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">SPI3</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">SR</span>;
+        <span class="ident">DR</span>;
+        <span class="ident">CRCPR</span>;
+        <span class="ident">RXCRCR</span>;
+        <span class="ident">TXCRCR</span>;
+        <span class="ident">I2SCFGR</span>;
+        <span class="ident">I2SPR</span>;
+    }
+    <span class="doccomment">/// Serial peripheral interface</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">SPI4</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">SR</span>;
+        <span class="ident">DR</span>;
+        <span class="ident">CRCPR</span>;
+        <span class="ident">RXCRCR</span>;
+        <span class="ident">TXCRCR</span>;
+        <span class="ident">I2SCFGR</span>;
+        <span class="ident">I2SPR</span>;
+    }
+    <span class="doccomment">/// Serial peripheral interface</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">SPI5</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">SR</span>;
+        <span class="ident">DR</span>;
+        <span class="ident">CRCPR</span>;
+        <span class="ident">RXCRCR</span>;
+        <span class="ident">TXCRCR</span>;
+        <span class="ident">I2SCFGR</span>;
+        <span class="ident">I2SPR</span>;
+    }
+    <span class="doccomment">/// Nested vectored interrupt</span>
+    <span class="doccomment">/// controller</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">NVIC_STIR</span> {
+        <span class="ident">STIR</span>;
+    }
+    <span class="doccomment">/// System control block ACTLR</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">SCB_ACTRL</span> {
+        <span class="ident">ACTRL</span>;
+    }
+} <span class="op">=</span><span class="op">&gt;</span> { ... };
+    <span class="ident">reg</span>::<span class="macro">tokens</span><span class="macro">!</span> {
+    <span class="doccomment">/// Defines an index of STM32F411 register tokens.</span>
+    <span class="kw">pub</span> <span class="kw">macro</span> <span class="ident">stm32_reg_tokens</span>;
+    <span class="kw">use</span> <span class="kw">macro</span> <span class="ident">drone_cortexm</span>::<span class="ident">map</span>::<span class="ident">cortexm_reg_tokens</span>;
+    <span class="kw">super</span>::<span class="ident">inner</span>;
+    <span class="kw">crate</span>::<span class="ident">reg</span>;
+    <span class="doccomment">/// ADC common registers</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">ADC_Common</span> {
+        <span class="ident">CSR</span>;
+        <span class="ident">CCR</span>;
+    }
+    <span class="doccomment">/// Analog-to-digital converter</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">ADC1</span> {
+        <span class="ident">SR</span>;
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">SMPR1</span>;
+        <span class="ident">SMPR2</span>;
+        <span class="ident">JOFR1</span>;
+        <span class="ident">JOFR2</span>;
+        <span class="ident">JOFR3</span>;
+        <span class="ident">JOFR4</span>;
+        <span class="ident">HTR</span>;
+        <span class="ident">LTR</span>;
+        <span class="ident">SQR1</span>;
+        <span class="ident">SQR2</span>;
+        <span class="ident">SQR3</span>;
+        <span class="ident">JSQR</span>;
+        <span class="ident">JDR1</span>;
+        <span class="ident">JDR2</span>;
+        <span class="ident">JDR3</span>;
+        <span class="ident">JDR4</span>;
+        <span class="ident">DR</span>;
+    }
+    <span class="doccomment">/// Cryptographic processor</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">CRC</span> {
+        <span class="ident">DR</span>;
+        <span class="ident">IDR</span>;
+        <span class="ident">CR</span>;
+    }
+    <span class="doccomment">/// Debug support</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">DBG</span> {
+        <span class="ident">DBGMCU_IDCODE</span>;
+        <span class="ident">DBGMCU_CR</span>;
+        <span class="ident">DBGMCU_APB1_FZ</span>;
+        <span class="ident">DBGMCU_APB2_FZ</span>;
+    }
+    <span class="doccomment">/// External interrupt/event</span>
+    <span class="doccomment">/// controller</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">EXTI</span> {
+        <span class="ident">IMR</span>;
+        <span class="ident">EMR</span>;
+        <span class="ident">RTSR</span>;
+        <span class="ident">FTSR</span>;
+        <span class="ident">SWIER</span>;
+        <span class="ident">PR</span>;
+    }
+    <span class="doccomment">/// FLASH</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">FLASH</span> {
+        <span class="ident">ACR</span>;
+        <span class="ident">KEYR</span>;
+        <span class="ident">OPTKEYR</span>;
+        <span class="ident">SR</span>;
+        <span class="ident">CR</span>;
+        <span class="ident">OPTCR</span>;
+    }
+    <span class="doccomment">/// Independent watchdog</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">IWDG</span> {
+        <span class="ident">KR</span>;
+        <span class="ident">PR</span>;
+        <span class="ident">RLR</span>;
+        <span class="ident">SR</span>;
+    }
+    <span class="doccomment">/// USB on the go full speed</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">OTG_FS_DEVICE</span> {
+        <span class="ident">FS_DCFG</span>;
+        <span class="ident">FS_DCTL</span>;
+        <span class="ident">FS_DSTS</span>;
+        <span class="ident">FS_DIEPMSK</span>;
+        <span class="ident">FS_DOEPMSK</span>;
+        <span class="ident">FS_DAINT</span>;
+        <span class="ident">FS_DAINTMSK</span>;
+        <span class="ident">DVBUSDIS</span>;
+        <span class="ident">DVBUSPULSE</span>;
+        <span class="ident">DIEPEMPMSK</span>;
+        <span class="ident">FS_DIEPCTL0</span>;
+        <span class="ident">DIEPCTL1</span>;
+        <span class="ident">DIEPCTL2</span>;
+        <span class="ident">DIEPCTL3</span>;
+        <span class="ident">DOEPCTL0</span>;
+        <span class="ident">DOEPCTL1</span>;
+        <span class="ident">DOEPCTL2</span>;
+        <span class="ident">DOEPCTL3</span>;
+        <span class="ident">DIEPINT0</span>;
+        <span class="ident">DIEPINT1</span>;
+        <span class="ident">DIEPINT2</span>;
+        <span class="ident">DIEPINT3</span>;
+        <span class="ident">DOEPINT0</span>;
+        <span class="ident">DOEPINT1</span>;
+        <span class="ident">DOEPINT2</span>;
+        <span class="ident">DOEPINT3</span>;
+        <span class="ident">DIEPTSIZ0</span>;
+        <span class="ident">DOEPTSIZ0</span>;
+        <span class="ident">DIEPTSIZ1</span>;
+        <span class="ident">DIEPTSIZ2</span>;
+        <span class="ident">DIEPTSIZ3</span>;
+        <span class="ident">DTXFSTS0</span>;
+        <span class="ident">DTXFSTS1</span>;
+        <span class="ident">DTXFSTS2</span>;
+        <span class="ident">DTXFSTS3</span>;
+        <span class="ident">DOEPTSIZ1</span>;
+        <span class="ident">DOEPTSIZ2</span>;
+        <span class="ident">DOEPTSIZ3</span>;
+    }
+    <span class="doccomment">/// USB on the go full speed</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">OTG_FS_GLOBAL</span> {
+        <span class="ident">FS_GOTGCTL</span>;
+        <span class="ident">FS_GOTGINT</span>;
+        <span class="ident">FS_GAHBCFG</span>;
+        <span class="ident">FS_GUSBCFG</span>;
+        <span class="ident">FS_GRSTCTL</span>;
+        <span class="ident">FS_GINTSTS</span>;
+        <span class="ident">FS_GINTMSK</span>;
+        <span class="ident">FS_GRXSTSR_Device</span>;
+        <span class="op">!</span><span class="ident">FS_GRXSTSR_Host</span>;
+        <span class="ident">FS_GRXFSIZ</span>;
+        <span class="ident">FS_GNPTXFSIZ_Device</span>;
+        <span class="op">!</span><span class="ident">FS_GNPTXFSIZ_Host</span>;
+        <span class="ident">FS_GNPTXSTS</span>;
+        <span class="ident">FS_GCCFG</span>;
+        <span class="ident">FS_CID</span>;
+        <span class="ident">FS_HPTXFSIZ</span>;
+        <span class="ident">FS_DIEPTXF1</span>;
+        <span class="ident">FS_DIEPTXF2</span>;
+        <span class="ident">FS_DIEPTXF3</span>;
+    }
+    <span class="doccomment">/// USB on the go full speed</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">OTG_FS_HOST</span> {
+        <span class="ident">FS_HCFG</span>;
+        <span class="ident">HFIR</span>;
+        <span class="ident">FS_HFNUM</span>;
+        <span class="ident">FS_HPTXSTS</span>;
+        <span class="ident">HAINT</span>;
+        <span class="ident">HAINTMSK</span>;
+        <span class="ident">FS_HPRT</span>;
+        <span class="ident">FS_HCCHAR0</span>;
+        <span class="ident">FS_HCCHAR1</span>;
+        <span class="ident">FS_HCCHAR2</span>;
+        <span class="ident">FS_HCCHAR3</span>;
+        <span class="ident">FS_HCCHAR4</span>;
+        <span class="ident">FS_HCCHAR5</span>;
+        <span class="ident">FS_HCCHAR6</span>;
+        <span class="ident">FS_HCCHAR7</span>;
+        <span class="ident">FS_HCINT0</span>;
+        <span class="ident">FS_HCINT1</span>;
+        <span class="ident">FS_HCINT2</span>;
+        <span class="ident">FS_HCINT3</span>;
+        <span class="ident">FS_HCINT4</span>;
+        <span class="ident">FS_HCINT5</span>;
+        <span class="ident">FS_HCINT6</span>;
+        <span class="ident">FS_HCINT7</span>;
+        <span class="ident">FS_HCINTMSK0</span>;
+        <span class="ident">FS_HCINTMSK1</span>;
+        <span class="ident">FS_HCINTMSK2</span>;
+        <span class="ident">FS_HCINTMSK3</span>;
+        <span class="ident">FS_HCINTMSK4</span>;
+        <span class="ident">FS_HCINTMSK5</span>;
+        <span class="ident">FS_HCINTMSK6</span>;
+        <span class="ident">FS_HCINTMSK7</span>;
+        <span class="ident">FS_HCTSIZ0</span>;
+        <span class="ident">FS_HCTSIZ1</span>;
+        <span class="ident">FS_HCTSIZ2</span>;
+        <span class="ident">FS_HCTSIZ3</span>;
+        <span class="ident">FS_HCTSIZ4</span>;
+        <span class="ident">FS_HCTSIZ5</span>;
+        <span class="ident">FS_HCTSIZ6</span>;
+        <span class="ident">FS_HCTSIZ7</span>;
+    }
+    <span class="doccomment">/// USB on the go full speed</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">OTG_FS_PWRCLK</span> {
+        <span class="ident">FS_PCGCCTL</span>;
+    }
+    <span class="doccomment">/// Power control</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">PWR</span> {
+        <span class="ident">CR</span>;
+        <span class="ident">CSR</span>;
+    }
+    <span class="doccomment">/// Reset and clock control</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">RCC</span> {
+        <span class="ident">CR</span>;
+        <span class="ident">PLLCFGR</span>;
+        <span class="ident">CFGR</span>;
+        <span class="ident">CIR</span>;
+        <span class="ident">AHB1RSTR</span>;
+        <span class="ident">AHB2RSTR</span>;
+        <span class="ident">APB1RSTR</span>;
+        <span class="ident">APB2RSTR</span>;
+        <span class="ident">AHB1ENR</span>;
+        <span class="ident">AHB2ENR</span>;
+        <span class="ident">APB1ENR</span>;
+        <span class="ident">APB2ENR</span>;
+        <span class="ident">AHB1LPENR</span>;
+        <span class="ident">AHB2LPENR</span>;
+        <span class="ident">APB1LPENR</span>;
+        <span class="ident">APB2LPENR</span>;
+        <span class="ident">BDCR</span>;
+        <span class="ident">CSR</span>;
+        <span class="ident">SSCGR</span>;
+        <span class="ident">PLLI2SCFGR</span>;
+    }
+    <span class="doccomment">/// Real-time clock</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">RTC</span> {
+        <span class="ident">TR</span>;
+        <span class="ident">DR</span>;
+        <span class="ident">CR</span>;
+        <span class="ident">ISR</span>;
+        <span class="ident">PRER</span>;
+        <span class="ident">WUTR</span>;
+        <span class="ident">CALIBR</span>;
+        <span class="ident">ALRMAR</span>;
+        <span class="ident">ALRMBR</span>;
+        <span class="ident">WPR</span>;
+        <span class="ident">SSR</span>;
+        <span class="ident">SHIFTR</span>;
+        <span class="ident">TSTR</span>;
+        <span class="ident">TSDR</span>;
+        <span class="ident">TSSSR</span>;
+        <span class="ident">CALR</span>;
+        <span class="ident">TAFCR</span>;
+        <span class="ident">ALRMASSR</span>;
+        <span class="ident">ALRMBSSR</span>;
+        <span class="ident">BKP0R</span>;
+        <span class="ident">BKP1R</span>;
+        <span class="ident">BKP2R</span>;
+        <span class="ident">BKP3R</span>;
+        <span class="ident">BKP4R</span>;
+        <span class="ident">BKP5R</span>;
+        <span class="ident">BKP6R</span>;
+        <span class="ident">BKP7R</span>;
+        <span class="ident">BKP8R</span>;
+        <span class="ident">BKP9R</span>;
+        <span class="ident">BKP10R</span>;
+        <span class="ident">BKP11R</span>;
+        <span class="ident">BKP12R</span>;
+        <span class="ident">BKP13R</span>;
+        <span class="ident">BKP14R</span>;
+        <span class="ident">BKP15R</span>;
+        <span class="ident">BKP16R</span>;
+        <span class="ident">BKP17R</span>;
+        <span class="ident">BKP18R</span>;
+        <span class="ident">BKP19R</span>;
+    }
+    <span class="doccomment">/// Secure digital input/output</span>
+    <span class="doccomment">/// interface</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">SDIO</span> {
+        <span class="ident">POWER</span>;
+        <span class="ident">CLKCR</span>;
+        <span class="ident">ARG</span>;
+        <span class="ident">CMD</span>;
+        <span class="ident">RESPCMD</span>;
+        <span class="ident">RESP1</span>;
+        <span class="ident">RESP2</span>;
+        <span class="ident">RESP3</span>;
+        <span class="ident">RESP4</span>;
+        <span class="ident">DTIMER</span>;
+        <span class="ident">DLEN</span>;
+        <span class="ident">DCTRL</span>;
+        <span class="ident">DCOUNT</span>;
+        <span class="ident">STA</span>;
+        <span class="ident">ICR</span>;
+        <span class="ident">MASK</span>;
+        <span class="ident">FIFOCNT</span>;
+        <span class="ident">FIFO</span>;
+    }
+    <span class="doccomment">/// System configuration controller</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">SYSCFG</span> {
+        <span class="ident">MEMRM</span>;
+        <span class="ident">PMC</span>;
+        <span class="ident">EXTICR1</span>;
+        <span class="ident">EXTICR2</span>;
+        <span class="ident">EXTICR3</span>;
+        <span class="ident">EXTICR4</span>;
+        <span class="ident">CMPCR</span>;
+    }
+    <span class="doccomment">/// Advanced-timers</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">TIM1</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">SMCR</span>;
+        <span class="ident">DIER</span>;
+        <span class="ident">SR</span>;
+        <span class="ident">EGR</span>;
+        <span class="ident">CCMR1_Output</span>;
+        <span class="op">!</span><span class="ident">CCMR1_Input</span>;
+        <span class="ident">CCMR2_Output</span>;
+        <span class="op">!</span><span class="ident">CCMR2_Input</span>;
+        <span class="ident">CCER</span>;
+        <span class="ident">CNT</span>;
+        <span class="ident">PSC</span>;
+        <span class="ident">ARR</span>;
+        <span class="ident">CCR1</span>;
+        <span class="ident">CCR2</span>;
+        <span class="ident">CCR3</span>;
+        <span class="ident">CCR4</span>;
+        <span class="ident">DCR</span>;
+        <span class="ident">DMAR</span>;
+        <span class="ident">RCR</span>;
+        <span class="ident">BDTR</span>;
+    }
+    <span class="doccomment">/// Advanced-timers</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">TIM8</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">SMCR</span>;
+        <span class="ident">DIER</span>;
+        <span class="ident">SR</span>;
+        <span class="ident">EGR</span>;
+        <span class="ident">CCMR1_Output</span>;
+        <span class="op">!</span><span class="ident">CCMR1_Input</span>;
+        <span class="ident">CCMR2_Output</span>;
+        <span class="op">!</span><span class="ident">CCMR2_Input</span>;
+        <span class="ident">CCER</span>;
+        <span class="ident">CNT</span>;
+        <span class="ident">PSC</span>;
+        <span class="ident">ARR</span>;
+        <span class="ident">CCR1</span>;
+        <span class="ident">CCR2</span>;
+        <span class="ident">CCR3</span>;
+        <span class="ident">CCR4</span>;
+        <span class="ident">DCR</span>;
+        <span class="ident">DMAR</span>;
+        <span class="ident">RCR</span>;
+        <span class="ident">BDTR</span>;
+    }
+    <span class="doccomment">/// General-purpose-timers</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">TIM10</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">DIER</span>;
+        <span class="ident">SR</span>;
+        <span class="ident">EGR</span>;
+        <span class="ident">CCMR1_Output</span>;
+        <span class="op">!</span><span class="ident">CCMR1_Input</span>;
+        <span class="ident">CCER</span>;
+        <span class="ident">CNT</span>;
+        <span class="ident">PSC</span>;
+        <span class="ident">ARR</span>;
+        <span class="ident">CCR1</span>;
+    }
+    <span class="doccomment">/// General-purpose-timers</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">TIM11</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">DIER</span>;
+        <span class="ident">SR</span>;
+        <span class="ident">EGR</span>;
+        <span class="ident">CCMR1_Output</span>;
+        <span class="op">!</span><span class="ident">CCMR1_Input</span>;
+        <span class="ident">CCER</span>;
+        <span class="ident">CNT</span>;
+        <span class="ident">PSC</span>;
+        <span class="ident">ARR</span>;
+        <span class="ident">CCR1</span>;
+        <span class="ident">OR</span>;
+    }
+    <span class="doccomment">/// General purpose timers</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">TIM2</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">SMCR</span>;
+        <span class="ident">DIER</span>;
+        <span class="ident">SR</span>;
+        <span class="ident">EGR</span>;
+        <span class="ident">CCMR1_Output</span>;
+        <span class="op">!</span><span class="ident">CCMR1_Input</span>;
+        <span class="ident">CCMR2_Output</span>;
+        <span class="op">!</span><span class="ident">CCMR2_Input</span>;
+        <span class="ident">CCER</span>;
+        <span class="ident">CNT</span>;
+        <span class="ident">PSC</span>;
+        <span class="ident">ARR</span>;
+        <span class="ident">CCR1</span>;
+        <span class="ident">CCR2</span>;
+        <span class="ident">CCR3</span>;
+        <span class="ident">CCR4</span>;
+        <span class="ident">DCR</span>;
+        <span class="ident">DMAR</span>;
+        <span class="ident">OR</span>;
+    }
+    <span class="doccomment">/// General purpose timers</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">TIM3</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">SMCR</span>;
+        <span class="ident">DIER</span>;
+        <span class="ident">SR</span>;
+        <span class="ident">EGR</span>;
+        <span class="ident">CCMR1_Output</span>;
+        <span class="op">!</span><span class="ident">CCMR1_Input</span>;
+        <span class="ident">CCMR2_Output</span>;
+        <span class="op">!</span><span class="ident">CCMR2_Input</span>;
+        <span class="ident">CCER</span>;
+        <span class="ident">CNT</span>;
+        <span class="ident">PSC</span>;
+        <span class="ident">ARR</span>;
+        <span class="ident">CCR1</span>;
+        <span class="ident">CCR2</span>;
+        <span class="ident">CCR3</span>;
+        <span class="ident">CCR4</span>;
+        <span class="ident">DCR</span>;
+        <span class="ident">DMAR</span>;
+    }
+    <span class="doccomment">/// General purpose timers</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">TIM4</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">SMCR</span>;
+        <span class="ident">DIER</span>;
+        <span class="ident">SR</span>;
+        <span class="ident">EGR</span>;
+        <span class="ident">CCMR1_Output</span>;
+        <span class="op">!</span><span class="ident">CCMR1_Input</span>;
+        <span class="ident">CCMR2_Output</span>;
+        <span class="op">!</span><span class="ident">CCMR2_Input</span>;
+        <span class="ident">CCER</span>;
+        <span class="ident">CNT</span>;
+        <span class="ident">PSC</span>;
+        <span class="ident">ARR</span>;
+        <span class="ident">CCR1</span>;
+        <span class="ident">CCR2</span>;
+        <span class="ident">CCR3</span>;
+        <span class="ident">CCR4</span>;
+        <span class="ident">DCR</span>;
+        <span class="ident">DMAR</span>;
+    }
+    <span class="doccomment">/// General-purpose-timers</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">TIM5</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">SMCR</span>;
+        <span class="ident">DIER</span>;
+        <span class="ident">SR</span>;
+        <span class="ident">EGR</span>;
+        <span class="ident">CCMR1_Output</span>;
+        <span class="op">!</span><span class="ident">CCMR1_Input</span>;
+        <span class="ident">CCMR2_Output</span>;
+        <span class="op">!</span><span class="ident">CCMR2_Input</span>;
+        <span class="ident">CCER</span>;
+        <span class="ident">CNT</span>;
+        <span class="ident">PSC</span>;
+        <span class="ident">ARR</span>;
+        <span class="ident">CCR1</span>;
+        <span class="ident">CCR2</span>;
+        <span class="ident">CCR3</span>;
+        <span class="ident">CCR4</span>;
+        <span class="ident">DCR</span>;
+        <span class="ident">DMAR</span>;
+        <span class="ident">OR</span>;
+    }
+    <span class="doccomment">/// General purpose timers</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">TIM9</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">SMCR</span>;
+        <span class="ident">DIER</span>;
+        <span class="ident">SR</span>;
+        <span class="ident">EGR</span>;
+        <span class="ident">CCMR1_Output</span>;
+        <span class="op">!</span><span class="ident">CCMR1_Input</span>;
+        <span class="ident">CCER</span>;
+        <span class="ident">CNT</span>;
+        <span class="ident">PSC</span>;
+        <span class="ident">ARR</span>;
+        <span class="ident">CCR1</span>;
+        <span class="ident">CCR2</span>;
+    }
+    <span class="doccomment">/// Universal synchronous asynchronous receiver</span>
+    <span class="doccomment">/// transmitter</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">USART1</span> {
+        <span class="ident">SR</span>;
+        <span class="ident">DR</span>;
+        <span class="ident">BRR</span>;
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">CR3</span>;
+        <span class="ident">GTPR</span>;
+    }
+    <span class="doccomment">/// Universal synchronous asynchronous receiver</span>
+    <span class="doccomment">/// transmitter</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">USART2</span> {
+        <span class="ident">SR</span>;
+        <span class="ident">DR</span>;
+        <span class="ident">BRR</span>;
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">CR3</span>;
+        <span class="ident">GTPR</span>;
+    }
+    <span class="doccomment">/// Universal synchronous asynchronous receiver</span>
+    <span class="doccomment">/// transmitter</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">USART6</span> {
+        <span class="ident">SR</span>;
+        <span class="ident">DR</span>;
+        <span class="ident">BRR</span>;
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">CR3</span>;
+        <span class="ident">GTPR</span>;
+    }
+    <span class="doccomment">/// Window watchdog</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">WWDG</span> {
+        <span class="ident">CR</span>;
+        <span class="ident">CFR</span>;
+        <span class="ident">SR</span>;
+    }
+    <span class="doccomment">/// DMA controller</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">DMA2</span> {
+        <span class="ident">LISR</span>;
+        <span class="ident">HISR</span>;
+        <span class="ident">LIFCR</span>;
+        <span class="ident">HIFCR</span>;
+        <span class="ident">S0CR</span>;
+        <span class="ident">S0NDTR</span>;
+        <span class="ident">S0PAR</span>;
+        <span class="ident">S0M0AR</span>;
+        <span class="ident">S0M1AR</span>;
+        <span class="ident">S0FCR</span>;
+        <span class="ident">S1CR</span>;
+        <span class="ident">S1NDTR</span>;
+        <span class="ident">S1PAR</span>;
+        <span class="ident">S1M0AR</span>;
+        <span class="ident">S1M1AR</span>;
+        <span class="ident">S1FCR</span>;
+        <span class="ident">S2CR</span>;
+        <span class="ident">S2NDTR</span>;
+        <span class="ident">S2PAR</span>;
+        <span class="ident">S2M0AR</span>;
+        <span class="ident">S2M1AR</span>;
+        <span class="ident">S2FCR</span>;
+        <span class="ident">S3CR</span>;
+        <span class="ident">S3NDTR</span>;
+        <span class="ident">S3PAR</span>;
+        <span class="ident">S3M0AR</span>;
+        <span class="ident">S3M1AR</span>;
+        <span class="ident">S3FCR</span>;
+        <span class="ident">S4CR</span>;
+        <span class="ident">S4NDTR</span>;
+        <span class="ident">S4PAR</span>;
+        <span class="ident">S4M0AR</span>;
+        <span class="ident">S4M1AR</span>;
+        <span class="ident">S4FCR</span>;
+        <span class="ident">S5CR</span>;
+        <span class="ident">S5NDTR</span>;
+        <span class="ident">S5PAR</span>;
+        <span class="ident">S5M0AR</span>;
+        <span class="ident">S5M1AR</span>;
+        <span class="ident">S5FCR</span>;
+        <span class="ident">S6CR</span>;
+        <span class="ident">S6NDTR</span>;
+        <span class="ident">S6PAR</span>;
+        <span class="ident">S6M0AR</span>;
+        <span class="ident">S6M1AR</span>;
+        <span class="ident">S6FCR</span>;
+        <span class="ident">S7CR</span>;
+        <span class="ident">S7NDTR</span>;
+        <span class="ident">S7PAR</span>;
+        <span class="ident">S7M0AR</span>;
+        <span class="ident">S7M1AR</span>;
+        <span class="ident">S7FCR</span>;
+    }
+    <span class="doccomment">/// DMA controller</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">DMA1</span> {
+        <span class="ident">LISR</span>;
+        <span class="ident">HISR</span>;
+        <span class="ident">LIFCR</span>;
+        <span class="ident">HIFCR</span>;
+        <span class="ident">S0CR</span>;
+        <span class="ident">S0NDTR</span>;
+        <span class="ident">S0PAR</span>;
+        <span class="ident">S0M0AR</span>;
+        <span class="ident">S0M1AR</span>;
+        <span class="ident">S0FCR</span>;
+        <span class="ident">S1CR</span>;
+        <span class="ident">S1NDTR</span>;
+        <span class="ident">S1PAR</span>;
+        <span class="ident">S1M0AR</span>;
+        <span class="ident">S1M1AR</span>;
+        <span class="ident">S1FCR</span>;
+        <span class="ident">S2CR</span>;
+        <span class="ident">S2NDTR</span>;
+        <span class="ident">S2PAR</span>;
+        <span class="ident">S2M0AR</span>;
+        <span class="ident">S2M1AR</span>;
+        <span class="ident">S2FCR</span>;
+        <span class="ident">S3CR</span>;
+        <span class="ident">S3NDTR</span>;
+        <span class="ident">S3PAR</span>;
+        <span class="ident">S3M0AR</span>;
+        <span class="ident">S3M1AR</span>;
+        <span class="ident">S3FCR</span>;
+        <span class="ident">S4CR</span>;
+        <span class="ident">S4NDTR</span>;
+        <span class="ident">S4PAR</span>;
+        <span class="ident">S4M0AR</span>;
+        <span class="ident">S4M1AR</span>;
+        <span class="ident">S4FCR</span>;
+        <span class="ident">S5CR</span>;
+        <span class="ident">S5NDTR</span>;
+        <span class="ident">S5PAR</span>;
+        <span class="ident">S5M0AR</span>;
+        <span class="ident">S5M1AR</span>;
+        <span class="ident">S5FCR</span>;
+        <span class="ident">S6CR</span>;
+        <span class="ident">S6NDTR</span>;
+        <span class="ident">S6PAR</span>;
+        <span class="ident">S6M0AR</span>;
+        <span class="ident">S6M1AR</span>;
+        <span class="ident">S6FCR</span>;
+        <span class="ident">S7CR</span>;
+        <span class="ident">S7NDTR</span>;
+        <span class="ident">S7PAR</span>;
+        <span class="ident">S7M0AR</span>;
+        <span class="ident">S7M1AR</span>;
+        <span class="ident">S7FCR</span>;
+    }
+    <span class="doccomment">/// General-purpose I/Os</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">GPIOH</span> {
+        <span class="ident">MODER</span>;
+        <span class="ident">OTYPER</span>;
+        <span class="ident">OSPEEDR</span>;
+        <span class="ident">PUPDR</span>;
+        <span class="ident">IDR</span>;
+        <span class="ident">ODR</span>;
+        <span class="ident">BSRR</span>;
+        <span class="ident">LCKR</span>;
+        <span class="ident">AFRL</span>;
+        <span class="ident">AFRH</span>;
+    }
+    <span class="doccomment">/// General-purpose I/Os</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">GPIOE</span> {
+        <span class="ident">MODER</span>;
+        <span class="ident">OTYPER</span>;
+        <span class="ident">OSPEEDR</span>;
+        <span class="ident">PUPDR</span>;
+        <span class="ident">IDR</span>;
+        <span class="ident">ODR</span>;
+        <span class="ident">BSRR</span>;
+        <span class="ident">LCKR</span>;
+        <span class="ident">AFRL</span>;
+        <span class="ident">AFRH</span>;
+    }
+    <span class="doccomment">/// General-purpose I/Os</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">GPIOD</span> {
+        <span class="ident">MODER</span>;
+        <span class="ident">OTYPER</span>;
+        <span class="ident">OSPEEDR</span>;
+        <span class="ident">PUPDR</span>;
+        <span class="ident">IDR</span>;
+        <span class="ident">ODR</span>;
+        <span class="ident">BSRR</span>;
+        <span class="ident">LCKR</span>;
+        <span class="ident">AFRL</span>;
+        <span class="ident">AFRH</span>;
+    }
+    <span class="doccomment">/// General-purpose I/Os</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">GPIOC</span> {
+        <span class="ident">MODER</span>;
+        <span class="ident">OTYPER</span>;
+        <span class="ident">OSPEEDR</span>;
+        <span class="ident">PUPDR</span>;
+        <span class="ident">IDR</span>;
+        <span class="ident">ODR</span>;
+        <span class="ident">BSRR</span>;
+        <span class="ident">LCKR</span>;
+        <span class="ident">AFRL</span>;
+        <span class="ident">AFRH</span>;
+    }
+    <span class="doccomment">/// General-purpose I/Os</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">GPIOB</span> {
+        <span class="ident">MODER</span>;
+        <span class="ident">OTYPER</span>;
+        <span class="ident">OSPEEDR</span>;
+        <span class="ident">PUPDR</span>;
+        <span class="ident">IDR</span>;
+        <span class="ident">ODR</span>;
+        <span class="ident">BSRR</span>;
+        <span class="ident">LCKR</span>;
+        <span class="ident">AFRL</span>;
+        <span class="ident">AFRH</span>;
+    }
+    <span class="doccomment">/// General-purpose I/Os</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">GPIOA</span> {
+        <span class="ident">MODER</span>;
+        <span class="ident">OTYPER</span>;
+        <span class="ident">OSPEEDR</span>;
+        <span class="ident">PUPDR</span>;
+        <span class="ident">IDR</span>;
+        <span class="ident">ODR</span>;
+        <span class="ident">BSRR</span>;
+        <span class="ident">LCKR</span>;
+        <span class="ident">AFRL</span>;
+        <span class="ident">AFRH</span>;
+    }
+    <span class="doccomment">/// Inter-integrated circuit</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">I2C3</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">OAR1</span>;
+        <span class="ident">OAR2</span>;
+        <span class="ident">DR</span>;
+        <span class="ident">SR1</span>;
+        <span class="ident">SR2</span>;
+        <span class="ident">CCR</span>;
+        <span class="ident">TRISE</span>;
+        <span class="ident">FLTR</span>;
+    }
+    <span class="doccomment">/// Inter-integrated circuit</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">I2C2</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">OAR1</span>;
+        <span class="ident">OAR2</span>;
+        <span class="ident">DR</span>;
+        <span class="ident">SR1</span>;
+        <span class="ident">SR2</span>;
+        <span class="ident">CCR</span>;
+        <span class="ident">TRISE</span>;
+        <span class="ident">FLTR</span>;
+    }
+    <span class="doccomment">/// Inter-integrated circuit</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">I2C1</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">OAR1</span>;
+        <span class="ident">OAR2</span>;
+        <span class="ident">DR</span>;
+        <span class="ident">SR1</span>;
+        <span class="ident">SR2</span>;
+        <span class="ident">CCR</span>;
+        <span class="ident">TRISE</span>;
+        <span class="ident">FLTR</span>;
+    }
+    <span class="doccomment">/// Serial peripheral interface</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">I2S2ext</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">SR</span>;
+        <span class="ident">DR</span>;
+        <span class="ident">CRCPR</span>;
+        <span class="ident">RXCRCR</span>;
+        <span class="ident">TXCRCR</span>;
+        <span class="ident">I2SCFGR</span>;
+        <span class="ident">I2SPR</span>;
+    }
+    <span class="doccomment">/// Serial peripheral interface</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">I2S3ext</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">SR</span>;
+        <span class="ident">DR</span>;
+        <span class="ident">CRCPR</span>;
+        <span class="ident">RXCRCR</span>;
+        <span class="ident">TXCRCR</span>;
+        <span class="ident">I2SCFGR</span>;
+        <span class="ident">I2SPR</span>;
+    }
+    <span class="doccomment">/// Serial peripheral interface</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">SPI1</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">SR</span>;
+        <span class="ident">DR</span>;
+        <span class="ident">CRCPR</span>;
+        <span class="ident">RXCRCR</span>;
+        <span class="ident">TXCRCR</span>;
+        <span class="ident">I2SCFGR</span>;
+        <span class="ident">I2SPR</span>;
+    }
+    <span class="doccomment">/// Serial peripheral interface</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">SPI2</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">SR</span>;
+        <span class="ident">DR</span>;
+        <span class="ident">CRCPR</span>;
+        <span class="ident">RXCRCR</span>;
+        <span class="ident">TXCRCR</span>;
+        <span class="ident">I2SCFGR</span>;
+        <span class="ident">I2SPR</span>;
+    }
+    <span class="doccomment">/// Serial peripheral interface</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">SPI3</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">SR</span>;
+        <span class="ident">DR</span>;
+        <span class="ident">CRCPR</span>;
+        <span class="ident">RXCRCR</span>;
+        <span class="ident">TXCRCR</span>;
+        <span class="ident">I2SCFGR</span>;
+        <span class="ident">I2SPR</span>;
+    }
+    <span class="doccomment">/// Serial peripheral interface</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">SPI4</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">SR</span>;
+        <span class="ident">DR</span>;
+        <span class="ident">CRCPR</span>;
+        <span class="ident">RXCRCR</span>;
+        <span class="ident">TXCRCR</span>;
+        <span class="ident">I2SCFGR</span>;
+        <span class="ident">I2SPR</span>;
+    }
+    <span class="doccomment">/// Serial peripheral interface</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">SPI5</span> {
+        <span class="ident">CR1</span>;
+        <span class="ident">CR2</span>;
+        <span class="ident">SR</span>;
+        <span class="ident">DR</span>;
+        <span class="ident">CRCPR</span>;
+        <span class="ident">RXCRCR</span>;
+        <span class="ident">TXCRCR</span>;
+        <span class="ident">I2SCFGR</span>;
+        <span class="ident">I2SPR</span>;
+    }
+    <span class="doccomment">/// Nested vectored interrupt</span>
+    <span class="doccomment">/// controller</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">NVIC_STIR</span> {
+        <span class="ident">STIR</span>;
+    }
+    <span class="doccomment">/// System control block ACTLR</span>
+    <span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">SCB_ACTRL</span> {
+        <span class="ident">ACTRL</span>;
+    }
+} <span class="op">=</span><span class="op">&gt;</span> { ... };
+}</pre></div>
+</div><div class='docblock'><p>Defines an index of STM32F411 register tokens.</p>
+</div></section><section id="search" class="content hidden"></section><section class="footer"></section><script>window.rootPath = "../";window.currentCrate = "drone_stm32_map";</script><script src="../main.js"></script><script defer src="../search-index.js"></script></body></html>

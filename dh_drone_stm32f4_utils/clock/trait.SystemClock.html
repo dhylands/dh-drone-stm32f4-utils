@@ -1,0 +1,79 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="API documentation for the Rust `SystemClock` trait in crate `dh_drone_stm32f4_utils`."><meta name="keywords" content="rust, rustlang, rust-lang, SystemClock"><title>dh_drone_stm32f4_utils::clock::SystemClock - Rust</title><link rel="stylesheet" type="text/css" href="../../normalize.css"><link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../../dark.css"><link rel="stylesheet" type="text/css" href="../../light.css" id="themeStyle"><script src="../../storage.js"></script><noscript><link rel="stylesheet" href="../../noscript.css"></noscript><link rel="shortcut icon" href="../../favicon.ico"><style type="text/css">#crate-search{background-image:url("../../down-arrow.svg");}</style></head><body class="rustdoc trait"><!--[if lte IE 8]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu">&#9776;</div><a href='../../dh_drone_stm32f4_utils/index.html'><div class='logo-container'><img src='../../rust-logo.png' alt='logo'></div></a><p class='location'>Trait SystemClock</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#required-methods">Required Methods</a><div class="sidebar-links"><a href="#tymethod.flash_latency">flash_latency</a><a href="#tymethod.hse_freq">hse_freq</a><a href="#tymethod.pllm">pllm</a><a href="#tymethod.plln">plln</a><a href="#tymethod.pllp">pllp</a><a href="#tymethod.pllq">pllq</a></div><a class="sidebar-title" href="#implementors">Implementors</a></div><p class='location'><a href='../index.html'>dh_drone_stm32f4_utils</a>::<wbr><a href='index.html'>clock</a></p><script>window.sidebarCurrent = {name: 'SystemClock', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script></div></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!"><img src="../../brush.svg" width="18" alt="Pick another theme!"></button><div id="theme-choices"></div></div><script src="../../theme.js"></script><nav class="sub"><form class="search-form"><div class="search-container"><div><select id="crate-search"><option value="All crates">All crates</option></select><input class="search-input" name="search" disabled autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><a id="settings-menu" href="../../settings.html"><img src="../../wheel.svg" width="18" alt="Change settings"></a></div></form></nav><section id="main" class="content"><h1 class='fqn'><span class='out-of-band'><span id='render-detail'><a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">[<span class='inner'>&#x2212;</span>]</a></span><a class='srclink' href='../../src/dh_drone_stm32f4_utils/clock.rs.html#102-126' title='goto source code'>[src]</a></span><span class='in-band'>Trait <a href='../index.html'>dh_drone_stm32f4_utils</a>::<wbr><a href='index.html'>clock</a>::<wbr><a class="trait" href=''>SystemClock</a></span></h1><div class="docblock type-decl hidden-by-usual-hider"><pre class='rust trait'>pub trait SystemClock {
+    fn <a href='#tymethod.flash_latency' class='fnname'>flash_latency</a>(&amp;self) -&gt; u32;
+<div class='item-spacer'></div>    fn <a href='#tymethod.hse_freq' class='fnname'>hse_freq</a>(&amp;self) -&gt; u32;
+<div class='item-spacer'></div>    fn <a href='#tymethod.pllm' class='fnname'>pllm</a>(&amp;self) -&gt; u32;
+<div class='item-spacer'></div>    fn <a href='#tymethod.plln' class='fnname'>plln</a>(&amp;self) -&gt; u32;
+<div class='item-spacer'></div>    fn <a href='#tymethod.pllp' class='fnname'>pllp</a>(&amp;self) -&gt; u32;
+<div class='item-spacer'></div>    fn <a href='#tymethod.pllq' class='fnname'>pllq</a>(&amp;self) -&gt; u32;
+}</pre></div><div class='docblock'><p>A trait that provides the constants needed to setup the main clocks
+used on the STM32F4xx.</p>
+<p>These clocks are:</p>
+<ul>
+<li>System clock. This is used to derive the AHB, APB1, and APB2 clocks.</li>
+<li>Bus clock (also referred to as AHB or HCLK) which is the
+clock that the CPU runs at.</li>
+<li>Low speed peripheral clock (APB1).</li>
+<li>High speed peripheral clock (APB2).</li>
+<li>USB/SDIO/RNG clock.</li>
+</ul>
+<p>The VCO-clock is calculated as the HSE-frequency * PLLN / PLLM.</p>
+<p>The system-clock is calculated as the VCO-clock / PLLP.</p>
+<p>The USB/SDIO/RNG-clock is calclated as the system-clock / PLLQ.</p>
+<p>The AHB clock is equal to the system clock.</p>
+<p>The APB1 clock is equal to the AHB clock divided by 4.</p>
+<p>The APB2 clock is equal to the AHB clock divided by 2.</p>
+<p>There are lots of constraints on the frequencies that the various clocks
+can have so you should consult the datasheet for the particular processor
+you're using to determine these constraints.</p>
+<h1 id="example" class="section-header"><a href="#example">Example</a></h1>
+<p>This example configures the WeAct STM32F411CEU6 board to run at 96 MHz.
+The WeAct STM32F411CEU6 board has a 25 MHz HSE crystal.</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered">
+<span class="kw">impl</span> <span class="ident">SystemClock</span> <span class="kw">for</span> <span class="ident">WeActSystemClock</span> {
+    <span class="kw">fn</span> <span class="ident">flash_latency</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">u32</span> {
+        <span class="number">3</span>
+    }
+
+    <span class="kw">fn</span> <span class="ident">hse_freq</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">u32</span> {
+        <span class="number">25_000_000</span>
+    }
+
+    <span class="kw">fn</span> <span class="ident">pllm</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">u32</span> {
+        <span class="number">25</span>
+    }
+
+    <span class="kw">fn</span> <span class="ident">plln</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">u32</span> {
+        <span class="number">192</span>
+    }
+
+    <span class="kw">fn</span> <span class="ident">pllp</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">u32</span> {
+        <span class="number">2</span>
+    }
+
+    <span class="kw">fn</span> <span class="ident">pllq</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-</span><span class="op">&gt;</span> <span class="ident">u32</span> {
+        <span class="number">4</span>
+    }
+}</pre></div>
+<p>This will result in the following frequencies:</p>
+<table><thead><tr><th>Clock</th><th>Frequency</th></tr></thead><tbody>
+<tr><td>SYSCLK</td><td>96 MHz</td></tr>
+<tr><td>AHB</td><td>96 MHz</td></tr>
+<tr><td>APB1</td><td>24 MHz</td></tr>
+<tr><td>APB2</td><td>48 MHz</td></tr>
+<tr><td>USB</td><td>48 MHz</td></tr>
+</tbody></table>
+<p>While the STM32F411 can go upto 100 MHz, we limit it to 96 MHz so that we
+can get a &quot;nice&quot; frequency for the USB clock (which should be a multiple
+of 24 MHz).</p>
+</div>
+            <h2 id='required-methods' class='small-section-header'>Required methods<a href='#required-methods' class='anchor'></a></h2><div class='methods'><h3 id='tymethod.flash_latency' class='method'><code id='flash_latency.v'>fn <a href='#tymethod.flash_latency' class='fnname'>flash_latency</a>(&amp;self) -&gt; u32</code></h3><div class='docblock'><p>Specifies the number of wait states to set for FLASH_ACR register. This will
+depend on the MCU voltage and system clock speed.</p>
+</div><h3 id='tymethod.hse_freq' class='method'><code id='hse_freq.v'>fn <a href='#tymethod.hse_freq' class='fnname'>hse_freq</a>(&amp;self) -&gt; u32</code></h3><div class='docblock'><p>The frequency of the external high speed crystal.</p>
+</div><h3 id='tymethod.pllm' class='method'><code id='pllm.v'>fn <a href='#tymethod.pllm' class='fnname'>pllm</a>(&amp;self) -&gt; u32</code></h3><div class='docblock'><p>PLLM - Division factor for the main PLL (PLL) input clock.</p>
+</div><h3 id='tymethod.plln' class='method'><code id='plln.v'>fn <a href='#tymethod.plln' class='fnname'>plln</a>(&amp;self) -&gt; u32</code></h3><div class='docblock'><p>PLLN - PLL multiplication factor for VCO. The VCO frequency
+is calculates as HSE frequency * PLLN / PLLM.</p>
+</div><h3 id='tymethod.pllp' class='method'><code id='pllp.v'>fn <a href='#tymethod.pllp' class='fnname'>pllp</a>(&amp;self) -&gt; u32</code></h3><div class='docblock'><p>PLLP - PLL division factor for main system clock.</p>
+</div><h3 id='tymethod.pllq' class='method'><code id='pllq.v'>fn <a href='#tymethod.pllq' class='fnname'>pllq</a>(&amp;self) -&gt; u32</code></h3><div class='docblock'><p>PLLQ - PLL division factor for USB OTG FS, and SDIO clocks</p>
+</div></div><span class='loading-content'>Loading content...</span>
+            <h2 id='implementors' class='small-section-header'>Implementors<a href='#implementors' class='anchor'></a></h2><div class='item-list' id='implementors-list'></div><span class='loading-content'>Loading content...</span><script type="text/javascript" src="../../implementors/dh_drone_stm32f4_utils/clock/trait.SystemClock.js" async></script></section><section id="search" class="content hidden"></section><section class="footer"></section><script>window.rootPath = "../../";window.currentCrate = "dh_drone_stm32f4_utils";</script><script src="../../main.js"></script><script defer src="../../search-index.js"></script></body></html>

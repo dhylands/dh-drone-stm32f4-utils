@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["Signal","A Signal has the notion of being on or off which is independent of how that signal is manifested in the hardware."]]});
