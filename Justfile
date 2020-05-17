@@ -3,6 +3,7 @@ target := 'thumbv7em-none-eabihf'
 features := ''
 name := `basename $(pwd)`
 release_bin := "target/" + target + "/release/" + name
+version := "$(cargo read-manifest | jq -r .version)"
 
 # Install dependencies
 deps:
@@ -35,12 +36,14 @@ doc-open: doc
 	drone env {{target}} -- cargo doc --features "{{features}}" --open
 
 # Publish the crate on crates.io
-publish:
-	drone env {{target}} -- cargo publish
+publish +args="":
+	drone env {{target}} -- cargo publish {{args}}
+	git tag -f {{version}}
+	git push origin {{version}}
 
-# Publish the crate on crates.io
-publish-dry:
-	drone env {{target}} -- cargo publish --dry-run
+# Print the crate version field from the Cargo.toml
+version:
+	echo "Version = {{version}}"
 
 # Run the tests
 test:
