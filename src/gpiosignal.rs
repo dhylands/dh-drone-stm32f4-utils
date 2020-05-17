@@ -1,9 +1,23 @@
+//! Some concrete implementations of the Signal trait for GPIO pins.
+
 use crate::consts::*;
 use crate::signal::Signal;
 
 use drone_cortexm::reg::prelude::*;
 use drone_stm32_map::periph::gpio::pin::{GpioPinMap, GpioPinPeriph};
 
+/// Implements a Signal which is on when a GPIO pin is at a logic low.
+///
+/// # Example
+///
+/// On the WeAct SMT32F411CEU6 board, the onboard LED is wired between
+/// VCC and CPU pin PC13. This means that to turn the LED on, you need
+/// to drive GPIO pin PC13 low.
+///
+/// ```rust
+///     let led = GpioSignalActiveLow::init(periph_gpio_c13!(reg));
+///     led.on()
+/// ```
 pub struct GpioSignalActiveLow<PIN>
 where
     PIN: GpioPinMap,
@@ -35,6 +49,17 @@ impl<PIN: GpioPinMap> Signal for GpioSignalActiveLow<PIN> {
     }
 }
 
+/// Implements a Signal which is on when a GPIO pin is at a logic high.
+///
+/// # Example
+///
+/// If an LED is wired between CPU pin PB5 and GND, then you would turn
+/// the LED on by setting pin PB5 to a logic high.
+///
+/// ```rust
+///     let led = GpioSignalActiveHigh::init(periph_gpio_b5!(reg));
+///     led.on()
+/// ```
 pub struct GpioSignalActiveHigh<PIN>
 where
     PIN: GpioPinMap,

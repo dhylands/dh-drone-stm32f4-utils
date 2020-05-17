@@ -1,11 +1,8 @@
-cargo-features = ["resolver"]
-
 [package]
 name = "drone-stm32f4-utils"
 version = "0.1.0"
 authors = ["Dave Hylands <davehylands@fullstory.com>"]
 edition = "2018"
-resolver = "2"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
