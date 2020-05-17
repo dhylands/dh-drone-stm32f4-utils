@@ -1,6 +1,6 @@
 [package]
 name = "dh-drone-stm32f4-utils"
-version = "0.1.0"
+version = "0.1.2"
 authors = ["Dave Hylands <davehylands@fullstory.com>"]
 license = "MIT"
 keywords = [
@@ -19,8 +19,9 @@ categories = [
 ]
 description = "STM32F4xx utility functions for Drone OS."
 homepage = "https://github.com/dhylands/dh-drone-stm32f4-utils"
-documentation = "https://github.com/dhylands/dh-drone-stm32f4-utils"
+documentation = "http://dh-drone-stm32f4-utils.davehylands.com/dh_drone_stm32f4_utils/index.html"
 repository = "https://github.com/dhylands/dh-drone-stm32f4-utils"
+readme = "README.md"
 edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

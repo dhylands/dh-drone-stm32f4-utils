@@ -1,0 +1,22 @@
+language: rust
+rust:
+- stable
+cache: cargo
+before_install:
+- cargo +stable install just
+- cat rust-toolchain
+- rustup install $(cat rust-toolchain)
+- rustup toolchain install $(cat rust-toolchain) -c rust-src -c llvm-tools-preview -t thumbv7em-none-eabihf
+- cargo +$(cat rust-toolchain) install drone
+script:
+- just doc
+- echo dh-drone-stm32f4-utils.davehylands.com > target/thumbv7em-none-eabihf/doc/CNAME
+- cp index.html target/thumbv7em-none-eabihf/doc
+deploy:
+  local_dir: target/thumbv7em-none-eabihf/doc
+  provider: pages
+  skip_cleanup: true
+  github_token: "$GITHUB_TOKEN"
+  keep_history: true
+  on:
+    branch: master
